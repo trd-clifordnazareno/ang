@@ -1,0 +1,30 @@
+<html>
+    <script src="angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<input type="text" id="data" value="ok"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+ 
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    show_check();
+});
+var show_check = function(){
+                    alert($("#data").val());
+                    }
+</script>
+
+</body>
+</html>
